@@ -1,0 +1,9 @@
+node_modules
+.DS_Store
+dist
+.cache
+*.zip
+*.7z
+*.local
+.idea
+.env.*.local

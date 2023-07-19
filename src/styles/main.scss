@@ -1,0 +1,26 @@
+/**
+ * @file 全局样式
+ */
+
+/** 全局样式 */
+@import "ant-design-vue/dist/antd.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind screens;
+
+html, body {
+  @apply min-h-screen;
+}
+
+h2 {
+  @apply max-w-80;
+  @apply text-black;
+}
+
+button {
+  &.ant-btn-primary {
+    background-color: #1677ff;
+  }
+}
