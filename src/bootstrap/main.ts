@@ -4,8 +4,9 @@ import { createPinia } from "pinia";
 import { createApp as create } from "vue";
 import { createRouter } from "src/router/";
 import { beforeEach } from "src/router/hook";
-
+import ant from "ant-design-vue";
 import type { App } from "vue";
+
 
 /**
  * @file 创建 Vue 实例
@@ -20,5 +21,6 @@ export function createApp() {
   router.beforeEach(beforeEach);
 
   app.use(router);
+  ant.install(app);
   return { app, router };
 }
