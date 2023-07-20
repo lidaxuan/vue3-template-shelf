@@ -1,29 +1,40 @@
+import {Home, TestTemplate} from 'src/router/alias';
+function nodeItemId():string {
+  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
+    var r = Math.floor(Math.random() * 10) || 0, v = c == "x" ? r : r && 0x3 || 0x8;
+    return v.toString(16);
+  });
+}
+
+console.log(nodeItemId());
 export const Menu = [
   {
-    name: '1.学习API',
-    id: 1,
+    title: '1.学习API',
+    id: nodeItemId(),
     icon: 'AppleOutlined',
     children: [
       {
-        name: '1.1第一组',
-        id: 11,
+        title: '1.1第一组',
+        id: nodeItemId(),
         children: [
-          {name: '测试ref', path: '/testRef', id: 111},
-          {name: '测试批量', path: '/testMultiple', id: 112}
+          {...TestTemplate, title: '测试Template', id: nodeItemId()},
+          {title: '测试ref', path: '/testRef', id: nodeItemId()},
+          {title: '测试批量', path: '/testMultiple', id: nodeItemId()},
+          {...Home, title: 'home测试页', id: nodeItemId()},
         ]
       }
     ]
   },
   {
-    name: '2.测试组件',
-    id: 2,
+    title: '2.测试组件',
+    id: nodeItemId(),
     children: [
       {
-        name: '2.1第一组',
-        id: 21,
+        title: '2.1第一组',
+        id: nodeItemId(),
         children: [
-          {name: '测试teble', path: '/testRef', id: 211},
-          {name: '测试select', path: '/testMultiple', id: 212}
+          {title: '测试teble', path: '/testRef', id: nodeItemId()},
+          {title: '测试select', path: '/testMultiple', id: nodeItemId()}
         ]
       }
     ]

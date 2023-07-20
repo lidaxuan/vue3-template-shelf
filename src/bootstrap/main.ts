@@ -8,25 +8,16 @@ import type {App} from "vue";
 import * as ElIconModules from "@ant-design/icons-vue";
 
 
+export const app: App = create(application);
+export const store = createPinia();
+export const router = createRouter();
 
-
-/**
- * @file 创建 Vue 实例
- */
-export function createApp() {
-  const app: App = create(application);
-  
-  const store = createPinia();
-  app.use(store);
-  
-  for (const name in ElIconModules) {
-    app.component(name, (ElIconModules as any)[name])
-  }
-  
-  const router = createRouter();
-  router.beforeEach(beforeEach);
-  
-  app.use(router);
-  ant.install(app);
-  return {app, router};
+for (const name in ElIconModules) {
+  app.component(name, (ElIconModules as any)[name])
 }
+
+router.beforeEach(beforeEach);
+app.use(store);
+app.use(router);
+ant.install(app);
+

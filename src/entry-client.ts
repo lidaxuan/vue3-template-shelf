@@ -8,21 +8,12 @@ import "virtual:windi-devtools";
 // 引入项目全局样式
 import "src/styles/main.scss";
 
-import { AppName } from "./config/index";
-import { createApp } from "./bootstrap/main";
-import { userStore } from "src/store";
+import {AppName} from "./config/index";
+import {app, router} from "./bootstrap/main";
+import {userStore} from "src/store";
 
-const main = async function () {
-  const { app, router } = createApp();
+const user = userStore();
+await Promise.all([user.loadUserInfo(), router.isReady()]);
 
-  const user = userStore();
+app.mount(`#${AppName}`);
 
-  await Promise.all([
-    user.loadUserInfo(), // 获取用户信息
-    router.isReady()     // 加载路由
-  ]);
-  
-  app.mount(`#${AppName}`);
-};
-
-setTimeout(main);
