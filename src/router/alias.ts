@@ -6,3 +6,5 @@ export const NotFount: RouteRecordBase = {name: "Not Fount", path: "/404"}
 
 export const TestTemplate: RouteRecordBase = {name: "testTemplate", path: "/testTemplate"}
 
+export const TestComp: RouteRecordBase = {name: "TestComp", path: "/testComp"}
+

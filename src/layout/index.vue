@@ -21,8 +21,7 @@
     </a-layout-header>
     <a-layout class="" style="height: calc(100% - 64px)">
       <a-layout-sider width="200" style="background: #fff">
-        {{ selectedKeys2 }}
-        <a-menu v-model:selectedKeys="selectedKeys2" v-model:openKeys="openKeys" mode="inline" :router="true" :style="{ height: '100%', borderRight: 0 }">
+        <a-menu v-model:selectedKeys="selectedKeys2" v-model:openKeys="openKeys" mode="inline" class="overflow-y-auto overflow-x-hidden" :style="{ height: '100%', borderRight: 0 }">
           <a-sub-menu v-for="item in sideMenu" :key="item.id">
             <template #title>
               <span>{{ item.title }}</span>
@@ -33,9 +32,9 @@
           </a-sub-menu>
         </a-menu>
       </a-layout-sider>
-      <a-layout style="padding: 0 24px 24px">
+      <a-layout style="padding: 0 24px 0px">
 
-        <a-layout-content :style="{ background: '#fff', padding: '24px', margin: 0, minHeight: '280px' }">
+        <a-layout-content :style="{ background: '#fff', padding: '0 24px', margin: 0, minHeight: '280px' }">
           <router-view></router-view>
         </a-layout-content>
       </a-layout>

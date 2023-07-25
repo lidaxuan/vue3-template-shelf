@@ -1,5 +1,5 @@
 <!--
- * @Description: 
+ * @Description:
  * @Author: 李大玄
  * @Date: 2023-02-01 16:58:51
  * @FilePath: /vue3-template-shelf/src/pages/home/index.vue
@@ -21,7 +21,7 @@ const numClick = (val: number) => {
   <div class="w-full h-full flex justify-center items-center">
     <a-result status="success">
       <template #icon>
-        <SmileTwoTone />
+<!--        <SmileTwoTone />-->
       </template>
       <template #title>
         <h1 class="text-black text-opacity-85 p-4.5">

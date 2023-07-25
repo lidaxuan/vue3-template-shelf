@@ -7,6 +7,7 @@ const children: RouteRecordRaw[] = [
   { ...alias.Home, component: () => import("src/pages/home/index.vue")},
   {...alias.NotFount, component: () => import("src/pages/common/404.vue"),},
   {...alias.TestTemplate, component: () => import("src/pages/common/template.vue"),},
+  {...alias.TestComp, component: () => import("src/pages/test/testComp/index.vue"),},
 ]
 
 const routes: RouteRecordRaw[] = [
